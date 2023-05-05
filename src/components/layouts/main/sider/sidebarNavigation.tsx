@@ -13,6 +13,10 @@ import {
   TableOutlined,
   UserOutlined,
   BlockOutlined,
+  BankOutlined,
+  TransactionOutlined,
+  PullRequestOutlined
+
 } from '@ant-design/icons';
 import { ReactComponent as NftIcon } from '@app/assets/icons/nft-icon.svg';
 
@@ -90,6 +94,13 @@ export const sidebarNavigation: SidebarNavigationItem[] = [
         key: 'admin',
         url: '',
       },
+],
+  },
+  {
+    title: 'Internal',
+    key: 'forms',
+    icon: <PullRequestOutlined />,
+    children: [
       {
         title: 'Drivers',
         key: 'drivers',
