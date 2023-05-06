@@ -22,6 +22,10 @@ import MedicalDashboardPage from '@app/pages/DashboardPages/MedicalDashboardPage
 
 const NewsFeedPage = React.lazy(() => import('@app/pages/NewsFeedPage'));
 const DataTablesPage = React.lazy(() => import('@app/pages/DataTablesPage'));
+
+const AttendantPage = React.lazy(() => import('@app/pages/AttendantPage'));
+const Attendant =React.lazy(() => import('@app/components/attendant_form/AttendantForm'));
+
 const ChartsPage = React.lazy(() => import('@app/pages/ChartsPage'));
 const ServerErrorPage = React.lazy(() => import('@app/pages/ServerErrorPage'));
 const Error404Page = React.lazy(() => import('@app/pages/Error404Page'));
@@ -103,6 +107,11 @@ const NotificationsUI = withLoading(NotificationsUIPage);
 const Skeletons = withLoading(SkeletonsPage);
 
 const DataTables = withLoading(DataTablesPage);
+//const Attendant = withLoading(AttendantPage);
+const AttendantForm = withLoading(Attendant);
+
+
+
 const Charts = withLoading(ChartsPage);
 
 // Maps
@@ -144,6 +153,9 @@ return (
             <Route path="advanced-forms" element={<AdvancedForm />} />
           </Route>
           <Route path="data-tables" element={<DataTables />} />
+          //<Route path="attendant-form" element={< AttendantForm/>} />
+          <Route path="/attendant" element={<AttendantForm />} />
+          
           <Route path="charts" element={<Charts />} />
           <Route path="maps">
             <Route path="google-maps" element={<Google />} />
@@ -205,6 +217,8 @@ return (
           <Route path="new-password" element={<NewPasswordPage />} />
         </Route>
         <Route path="/logout" element={<LogoutFallback />} />
+
+
       </Routes>
     </BrowserRouter>
   );

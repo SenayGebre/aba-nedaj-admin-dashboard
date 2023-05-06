@@ -1,7 +1,16 @@
 import React from 'react';
 import { DownOutlined } from '@ant-design/icons';
 import type { TableColumnsType } from 'antd';
-import { Badge, Dropdown, Space, Table } from 'antd';
+import { Badge, Dropdown, Space, Table,Button, } from 'antd';
+import { Link, useNavigate } from 'react-router-dom';
+import { ButtonType } from 'antd/lib/button';
+//import { NavigationRoute } from 'workbox-routing';
+
+
+
+  
+
+
 
 
 interface DataType {
@@ -28,7 +37,10 @@ const items = [
 
 const App: React.FC = () => {
   const expandedRowRender = () => {
+   
+    
     const columns: TableColumnsType<ExpandedDataType> = [
+     
       { title: 'Date', dataIndex: 'date', key: 'date' },
       { title: 'Name', dataIndex: 'name', key: 'name' },
       {
@@ -66,7 +78,16 @@ const App: React.FC = () => {
     }
     return <Table columns={columns} dataSource={data} pagination={false} />;
   };
-
+  
+  
+  const button: TableColumnsType<ButtonType> = [
+    {render: () => (
+  
+      <Space wrap>
+        <Button type="primary">Primary Button</Button>
+       
+      </Space>
+    ),}];
   const columns: TableColumnsType<DataType> = [
     { title: 'Name', dataIndex: 'name', key: 'name' },
     { title: 'Platform', dataIndex: 'platform', key: 'platform' },
@@ -91,9 +112,15 @@ const App: React.FC = () => {
   }
 
   return (
+  
     <>
+    
+<Link to="/attendant">
+        <button>Add User</button>
+      </Link>
       <Table
        // columns={columns}
+       
         expandable={{ expandedRowRender, defaultExpandedRowKeys: ['0'] }}
         dataSource={data}
       />

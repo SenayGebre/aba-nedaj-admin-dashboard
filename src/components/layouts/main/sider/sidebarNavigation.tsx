@@ -1,9 +1,7 @@
 import React from 'react';
 //import { Tables }  from '@app/components/table/table';
 import {
-  PullRequestOutlined,
-  TransactionOutlined,
-  BankOutlined, 
+ 
   CompassOutlined,
   DashboardOutlined,
   FormOutlined,
@@ -80,7 +78,7 @@ export const sidebarNavigation: SidebarNavigationItem[] = [
   
   {
     title: 'User Managment',
-    key: 'dataTables',
+    key: 'user managment',
     
     icon: <UserOutlined />,
     children: [
@@ -94,13 +92,6 @@ export const sidebarNavigation: SidebarNavigationItem[] = [
         key: 'admin',
         url: '',
       },
-],
-  },
-  {
-    title: 'Internal',
-    key: 'forms',
-    icon: <PullRequestOutlined />,
-    children: [
       {
         title: 'Drivers',
         key: 'drivers',
@@ -111,8 +102,9 @@ export const sidebarNavigation: SidebarNavigationItem[] = [
         key: 'chief',
         url: '',
       },
-    ],
+],
   },
+  
  
   
 ];
