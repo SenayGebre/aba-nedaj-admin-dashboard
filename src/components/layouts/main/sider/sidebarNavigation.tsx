@@ -1,5 +1,9 @@
 import React from 'react';
+//import { Tables }  from '@app/components/table/table';
 import {
+  PullRequestOutlined,
+  TransactionOutlined,
+  BankOutlined, 
   CompassOutlined,
   DashboardOutlined,
   FormOutlined,
@@ -26,32 +30,69 @@ export interface SidebarNavigationItem {
 
 export const sidebarNavigation: SidebarNavigationItem[] = [
   {
-    title: 'DashBoard',
-    key: 'medical-dashboard',
+    title: 'Dashboard',
+    key: 'dashboard',
+    // TODO use path variable
     url: '/',
-    icon: <DashboardOutlined />,
+    icon: <DashboardOutlined/>,
   },
   {
     title: 'Transactions',
-    key: 'apps',
-    icon: <TransactionOutlined />,
+    key: 'transactions',
     url: '/medical-dashboard',
-
+    icon: <TransactionOutlined />,
   },
   {
     title: 'Business Managment',
-    key: 'auth',
+    key: 'apps',
     icon: <BankOutlined />,
     children: [
       {
-        title: 'Business',
-        key: 'login',
-        url: '/auth/login',
+        title: 'Gas Station',
+        key: 'feed',
+        url: '/apps/feed',
       },
       {
-        title: 'Gas Station',
-        key: 'singUp',
-        url: '/auth/sign-up',
+        title: 'car',
+        key: 'dataTables',
+        url: '/data-tables',
+      },
+    ],
+  },
+  {
+    title: 'Internal',
+    key: 'internal',
+    icon: <PullRequestOutlined />,
+    children: [
+      {
+        title: 'Request',
+        key: 'request',
+        url: '',
+      },
+      {
+        title: 'Car',
+        key: 'car',
+        url: '',
+      },
+     
+    ],
+  },
+  
+  {
+    title: 'User Managment',
+    key: 'dataTables',
+    
+    icon: <UserOutlined />,
+    children: [
+      {
+        title: 'Attendant',
+        key: 'attendant',
+        url: '/data-tables',
+      },
+      {
+        title: 'Admin',
+        key: 'admin',
+        url: '',
       },
 ],
   },
@@ -61,26 +102,17 @@ export const sidebarNavigation: SidebarNavigationItem[] = [
     icon: <PullRequestOutlined />,
     children: [
       {
-        title: 'Requests',
-        key: 'dataTables',
-        url: '/forms/advanced-forms',
+        title: 'Drivers',
+        key: 'drivers',
+        url: '',
       },
       {
-        title: 'Car',
-        key: 'advanced-forms',
-        url: '/data-tables',
+        title: 'Chief',
+        key: 'chief',
+        url: '',
       },
     ],
   },
-  {
-    title: 'User Managment',
-    key: 'forms',
-    icon: <UserOutlined />,
-  },
-  {
-    title: 'common.dataTables',
-    key: 'dataTables',
-    url: '/data-tables',
-    icon: <TableOutlined />,
-  },
+ 
+  
 ];

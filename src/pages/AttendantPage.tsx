@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import { PageTitle } from '@app/components/common/PageTitle/PageTitle';
 import  App  from '@app/components/table/table';
-const DataTablesPage: React.FC = () => {
+const AttendantPage: React.FC = () => {
   const { t } = useTranslation();
   return (
     <>
@@ -12,5 +12,3 @@ const DataTablesPage: React.FC = () => {
     </>
   );
 };
-
-export default DataTablesPage;
