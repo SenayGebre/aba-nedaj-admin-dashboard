@@ -108,7 +108,7 @@ export const SignUpForm: React.FC = () => {
           <Auth.FormInputPassword placeholder={t('common.confirmPassword')} />
         </Auth.FormItem>
         <Auth.ActionsWrapper>
-          <BaseForm.Item name="termOfUse" valuePropName="checked" noStyle>
+{/*           <BaseForm.Item name="termOfUse" valuePropName="checked" noStyle>
             <Auth.FormCheckbox>
               <Auth.Text>
                 {t('signup.agree')}{' '}
@@ -121,7 +121,7 @@ export const SignUpForm: React.FC = () => {
                 </Link>
               </Auth.Text>
             </Auth.FormCheckbox>
-          </BaseForm.Item>
+          </BaseForm.Item> */}
         </Auth.ActionsWrapper>
         <BaseForm.Item noStyle>
           <Auth.SubmitButton type="primary" htmlType="submit" loading={isLoading}>
@@ -129,20 +129,20 @@ export const SignUpForm: React.FC = () => {
           </Auth.SubmitButton>
         </BaseForm.Item>
         <BaseForm.Item noStyle>
-          <Auth.SocialButton type="default" htmlType="submit">
+         {/*  <Auth.SocialButton type="default" htmlType="submit">
             <Auth.SocialIconWrapper>
               <GoogleIcon />
             </Auth.SocialIconWrapper>
             {t('signup.googleLink')}
-          </Auth.SocialButton>
+          </Auth.SocialButton> */}
         </BaseForm.Item>
         <BaseForm.Item noStyle>
-          <Auth.SocialButton type="default" htmlType="submit">
+          {/* <Auth.SocialButton type="default" htmlType="submit">
             <Auth.SocialIconWrapper>
               <FacebookIcon />
             </Auth.SocialIconWrapper>
             {t('signup.facebookLink')}
-          </Auth.SocialButton>
+          </Auth.SocialButton> */}
         </BaseForm.Item>
         <Auth.FooterWrapper>
           <Auth.Text>
