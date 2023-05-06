@@ -122,17 +122,19 @@ const Payments = withLoading(PaymentsPage);
 
 const AuthLayoutFallback = withLoading(AuthLayout);
 const LogoutFallback = withLoading(Logout);
-
 export const AppRouter: React.FC = () => {
-const protectedLayout = (
-   <RequireAuth>
-      < MainLayout />
-    </RequireAuth> 
-  ); 
+  const protectedLayout = (
+     <RequireAuth>
+        < MainLayout />
+      </RequireAuth> 
+    ); 
+
+
 return (
     <BrowserRouter>
       <Routes>
-         <Route path={NFT_DASHBOARD_PATH} element={<LoginPage/>}> 
+      <Route path="/" element= {protectedLayout} />
+         <Route path={NFT_DASHBOARD_PATH} element={protectedLayout}> 
           <Route index element= { <NftDashboardPage/> } />
          <Route path={MEDICAL_DASHBOARD_PATH} element={<MedicalDashboard />} /> 
           <Route path="apps">
