@@ -49,22 +49,7 @@ const Transaction: React.FC = () => {
         render: () => <Badge status="success" text="Finished" />,
       },
       { title: 'Upgrade Status', dataIndex: 'upgradeNum', key: 'upgradeNum' },
-      {
-        title: 'Action',
-        dataIndex: 'operation',
-        key: 'operation',
-        render: () => (
-          <Space size="middle">
-            <a>Approve</a>
-            <a>Decline</a>
-            <Dropdown menu={{ items }}>
-              <a>
-                More <DownOutlined />
-              </a>
-            </Dropdown>
-          </Space>
-        ),
-      },
+     
     ];
 
     const data = [];

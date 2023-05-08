@@ -7,7 +7,7 @@ const DriversPage: React.FC = () => {
   const { t } = useTranslation();
   return (
     <>
-      <PageTitle>{t('common.drivers')}</PageTitle>
+      <PageTitle>{t('drivers')}</PageTitle>
       <Drivers />
     </>
   );

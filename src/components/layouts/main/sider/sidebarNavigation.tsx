@@ -53,7 +53,7 @@ export const sidebarNavigation: SidebarNavigationItem[] = [
       {
         title: 'car',
         key: 'dataTables',
-        url: '/data-tables',
+        url: '/cars',
       },
     ],
   },

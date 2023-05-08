@@ -1,133 +1,76 @@
-import React from 'react';
-import { DownOutlined } from '@ant-design/icons';
-import type { TableColumnsType } from 'antd';
-import { Badge, Dropdown, Space, Table,Button, } from 'antd';
-import { Link, useNavigate } from 'react-router-dom';
-import { ButtonType } from 'antd/lib/button';
-//import { NavigationRoute } from 'workbox-routing';
+import React, { useState } from 'react';
+import { Button, Form, Input, Radio } from 'antd';
 
+type LayoutType = Parameters<typeof Form>[0]['layout'];
 
+const ChiefForm: React.FC = () => {
+  const [form] = Form.useForm();
+  const [formLayout, setFormLayout] = useState<LayoutType>('horizontal');
 
-  
-
-
-
-
-interface DataType {
-  key: React.Key;
-  name: string;
-  platform: string;
-  version: string;
-  upgradeNum: number;
-  creator: string;
-  createdAt: string;
-}
-
-interface ExpandedDataType {
-  key: React.Key;
-  date: string;
-  name: string;
-  upgradeNum: string;
-}
-
-const items = [
-  { key: '1', label: 'Action 1' },
-  { key: '2', label: 'Action 2' },
-];
-
-const App: React.FC = () => {
-  const expandedRowRender = () => {
-   
-    
-    const columns: TableColumnsType<ExpandedDataType> = [
-     
-      { title: 'Date', dataIndex: 'date', key: 'date' },
-      { title: 'Name', dataIndex: 'name', key: 'name' },
-      {
-        title: 'Status',
-        key: 'state',
-        render: () => <Badge status="success" text="Finished" />,
-      },
-      { title: 'Upgrade Status', dataIndex: 'upgradeNum', key: 'upgradeNum' },
-      {
-        title: 'Action',
-        dataIndex: 'operation',
-        key: 'operation',
-        render: () => (
-          <Space size="middle">
-            <a>Pause</a>
-            <a>Stop</a>
-            <Dropdown menu={{ items }}>
-              <a>
-                More <DownOutlined />
-              </a>
-            </Dropdown>
-          </Space>
-        ),
-      },
-    ];
-
-    const data = [];
-    for (let i = 0; i < 3; ++i) {
-      data.push({
-        key: i.toString(),
-        date: '2014-12-24 23:12:00',
-        name: 'This is production name',
-        upgradeNum: 'Upgraded: 56',
-      });
-    }
-    return <Table columns={columns} dataSource={data} pagination={false} />;
+  const onFormLayoutChange = ({ layout }: { layout: LayoutType }) => {
+    setFormLayout(layout);
   };
-  
-  
-  const button: TableColumnsType<ButtonType> = [
-    {render: () => (
-  
-      <Space wrap>
-        <Button type="primary">Primary Button</Button>
-       
-      </Space>
-    ),}];
-  const columns: TableColumnsType<DataType> = [
-    { title: 'Name', dataIndex: 'name', key: 'name' },
-    { title: 'Platform', dataIndex: 'platform', key: 'platform' },
-    { title: 'Version', dataIndex: 'version', key: 'version' },
-    { title: 'Upgraded', dataIndex: 'upgradeNum', key: 'upgradeNum' },
-    { title: 'Creator', dataIndex: 'creator', key: 'creator' },
-    { title: 'Date', dataIndex: 'createdAt', key: 'createdAt' },
-    { title: 'Action', key: 'operation', render: () => <a>Publish</a> },
-  ];
 
-  const data: DataType[] = [];
-  for (let i = 0; i < 1; ++i) {
-    data.push({
-      key: i.toString(),
-      name: 'Screen',
-      platform: 'iOS',
-      version: '10.3.4.5654',
-      upgradeNum: 500,
-      creator: 'Jack',
-      createdAt: '2014-12-24 23:12:00',
-    });
-  }
+  const formItemLayout =
+    formLayout === 'horizontal' ? { labelCol: { span: 4 }, wrapperCol: { span: 14 } } : null;
+
+  const buttonItemLayout =
+    formLayout === 'horizontal' ? { wrapperCol: { span: 14, offset: 4 } } : null;
 
   return (
-  
-    <>
-    
-<Link to="/">
-        <button>Add User</button>
-      </Link>
-      <Table
-       // columns={columns}
-       
-        expandable={{ expandedRowRender, defaultExpandedRowKeys: ['0'] }}
-        dataSource={data}
-      />
-     
+    <Form
+      {...formItemLayout}
+      layout={formLayout}
+      form={form}
+      initialValues={{ layout: formLayout }}
+      onValuesChange={onFormLayoutChange}
+      style={{ maxWidth: 600 }}
+    >
       
-    </>
+      <Form.Item label="fullname">
+        <Input placeholder="enter fullname" />
+      </Form.Item>
+      <Form.Item label="gender">
+        <Input placeholder="enter gender" />
+      </Form.Item>
+      <Form.Item label="phone">
+        <Input placeholder="enter phone number" />
+      </Form.Item>
+      <Form.Item label="email">
+        <Input placeholder="enter email" />
+      </Form.Item>
+      <Form.Item label="region">
+        <Input placeholder="enter region" />
+      </Form.Item>
+      <Form.Item label="city">
+        <Input placeholder="enter city" />
+      </Form.Item>
+      <Form.Item label="Street">
+        <Input placeholder="enter street" />
+      </Form.Item>
+      <Form.Item label="RoleId">
+        <Input placeholder="enter roleId" />
+      </Form.Item>
+      <Form.Item label="GasStationId">
+        <Input placeholder="enter gasStationId" />
+      </Form.Item>
+      <Form.Item label="HashPass">
+        <Input placeholder="enter hashPass" />
+      </Form.Item>
+      <Form.Item label="Status">
+        <Input placeholder="enter status" />
+      </Form.Item>
+      <Form.Item label="IsNew">
+        <Input placeholder="is new?" />
+      </Form.Item>
+      <Form.Item label="Default Account">
+        <Input placeholder="enter defaultAccount" />
+      </Form.Item>
+      <Form.Item {...buttonItemLayout}>
+        <Button type="primary">Submit</Button>
+      </Form.Item>
+    </Form>
   );
 };
 
-export default App;
+export default ChiefForm;

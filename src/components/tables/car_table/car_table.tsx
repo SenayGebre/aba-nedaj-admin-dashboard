@@ -24,10 +24,14 @@ interface DataType {
 }
 
 interface ExpandedDataType {
-  key: React.Key;
-  date: string;
-  name: string;
-  upgradeNum: string;
+  id: React.Key;
+  model: string;
+  code:string;
+  region: string;
+  lastKm: string;
+  plateNumber:string;
+  fuelType: string;
+ 
 }
 
 const items = [
@@ -35,33 +39,29 @@ const items = [
   { key: '2', label: 'Action 2' },
 ];
 
-const Car: React.FC = () => {
+const CarTable: React.FC = () => {
   const expandedRowRender = () => {
    
     
     const columns: TableColumnsType<ExpandedDataType> = [
-     
-      { title: 'Date', dataIndex: 'date', key: 'date' },
-      { title: 'Name', dataIndex: 'name', key: 'name' },
-      {
-        title: 'Status',
-        key: 'state',
-        render: () => <Badge status="success" text="Finished" />,
-      },
-      { title: 'Upgrade Status', dataIndex: 'upgradeNum', key: 'upgradeNum' },
+      { title: 'id', dataIndex: 'id', key: 'id' },
+      { title: 'model', dataIndex: 'model', key: 'model' },
+      { title: 'code', dataIndex: 'code', key: 'code' },
+      { title: 'ownerName', dataIndex: 'ownerName', key: 'ownerName' },
+      { title: 'plateNumber', dataIndex: 'plateNumber', key: 'plateNumber' },
+      { title: 'lastKm', dataIndex: 'lastKm', key: 'lastKm' },
+      { title: 'region', dataIndex: 'region', key: 'region' },
+      { title: 'fuelType', dataIndex: 'fuelType', key: 'fuelType' },
+      
       {
         title: 'Action',
         dataIndex: 'operation',
         key: 'operation',
         render: () => (
           <Space size="middle">
-            <a>Pause</a>
-            <a>Stop</a>
-            <Dropdown menu={{ items }}>
-              <a>
-                More <DownOutlined />
-              </a>
-            </Dropdown>
+            <a>update</a>
+            <a>delete</a>
+          
           </Space>
         ),
       },
@@ -70,10 +70,15 @@ const Car: React.FC = () => {
     const data = [];
     for (let i = 0; i < 3; ++i) {
       data.push({
-        key: i.toString(),
-        date: '2014-12-24 23:12:00',
-        name: 'This is production name',
-        upgradeNum: 'Upgraded: 56',
+        id: i.toString(),
+        model: 'Suzuki',
+        code:"231",
+        ownerName:"abebe kebede",
+         plateNumber:'3231',
+         lastKm:"32",
+         region:"region",
+         fuelType:"fuel type"
+       
       });
     }
     return <Table columns={columns} dataSource={data} pagination={false} />;
@@ -108,7 +113,12 @@ const Car: React.FC = () => {
   
     <>
     
-
+<Link to="/carForm">
+<Space wrap>
+        <Button type="primary">Add Car</Button>
+       
+      </Space>
+      </Link>
       <Table
        // columns={columns}
        
@@ -121,4 +131,4 @@ const Car: React.FC = () => {
   );
 };
 
-export default Car;
+export default CarTable;

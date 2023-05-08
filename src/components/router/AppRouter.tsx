@@ -33,8 +33,10 @@ const TransactionsPage= React.lazy(()=>import('@app/pages/TransactionsPage'));
 
 const AttendantsForm =React.lazy(() => import('@app/components/new_form/attendant_form/AttendantForm'));
 const GasStationsForm =React.lazy(() => import('@app/components/new_form/gas_station_form/gas_station_form'));
+const DriverForm =React.lazy(() => import('@app/components/new_form/drivers_form/drivers_form'));
 
 const ChiefForm =React.lazy(() => import('@app/components/new_form/chief_form/chief_form'));
+const CarForm =React.lazy(() => import('@app/components/new_form/car_form/car_form'));
 
 const ChartsPage = React.lazy(() => import('@app/pages/ChartsPage'));
 const ServerErrorPage = React.lazy(() => import('@app/pages/ServerErrorPage'));
@@ -126,6 +128,8 @@ const ChiefsTable= withLoading(ChiefsPage);
 const CarsTable= withLoading(CarsPage);
 const GasStationsTable= withLoading(GasStationsPage);
 const GasStationForm= withLoading(GasStationsForm);
+const DriversForm= withLoading(DriverForm);
+const CarsForm= withLoading(CarForm);
 
 
 const TransactionsTable= withLoading(TransactionsPage);
@@ -171,9 +175,10 @@ return (
             <Route path="advanced-forms" element={<AdvancedForm />} />
           </Route>
           <Route path="data-tables" element={<DataTables />} />
-          //<Route path="attendant-form" element={< AttendantForm/>} />
-          <Route path="/attendant" element={<AttendantForm />} />
+          <Route path="attendant-form" element={< AttendantForm/>} />
+         
           <Route path="/gasStationsForm" element={<GasStationForm />} />
+          <Route path="/carForm" element={<CarsForm />} />
 
           <Route path="/request" element={<RequestTable />} />
           <Route path="/drivers" element={<DriversTable />} />
@@ -183,6 +188,7 @@ return (
 
           <Route path="/transactions" element={<TransactionsTable />} />
           <Route path="/chief_form" element={<ChiefsForm />} />
+          <Route path="/driver_form" element={<DriversForm />} />
       
           <Route path="charts" element={<Charts />} />
           <Route path="maps">

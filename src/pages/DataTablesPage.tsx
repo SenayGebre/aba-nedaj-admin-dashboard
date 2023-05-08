@@ -7,7 +7,7 @@ const DataTablesPage: React.FC = () => {
   const { t } = useTranslation();
   return (
     <>
-      <PageTitle>{t('common.tables')}</PageTitle>
+      <PageTitle>{t('Attendant')}</PageTitle>
       <App />
     </>
   );

@@ -7,7 +7,7 @@ const TransactionsPage: React.FC = () => {
   const { t } = useTranslation();
   return (
     <>
-      <PageTitle>{t('common.transaction')}</PageTitle>
+      <PageTitle>{t('transaction')}</PageTitle>
       <Transaction />
     </>
   );

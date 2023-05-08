@@ -142,7 +142,7 @@ const App: React.FC = () => {
   
     <>
     
-<Link to="/attendant">
+<Link to="/attendant-form">
 <Space wrap>
         <Button type="primary">Add User</Button>
        

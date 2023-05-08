@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Form, Input, Radio } from 'antd';
+import { Link } from 'react-router-dom';
 
 type LayoutType = Parameters<typeof Form>[0]['layout'];
 
@@ -45,8 +46,30 @@ const App: React.FC = () => {
       <Form.Item label="city">
         <Input placeholder="enter city" />
       </Form.Item>
+      <Form.Item label="Street">
+        <Input placeholder="enter street" />
+      </Form.Item>
+      <Form.Item label="RoleId">
+        <Input placeholder="enter roleId" />
+      </Form.Item>
+      <Form.Item label="GasStationId">
+        <Input placeholder="enter gasStationId" />
+      </Form.Item>
+      <Form.Item label="HashPass">
+        <Input placeholder="enter hashPass" />
+      </Form.Item>
+      <Form.Item label="Status">
+        <Input placeholder="enter status" />
+      </Form.Item>
+      <Form.Item label="IsNew">
+        <Input placeholder="is new?" />
+      </Form.Item>
+      <Form.Item label="Default Account">
+        <Input placeholder="enter defaultAccount" />
+      </Form.Item>
       <Form.Item {...buttonItemLayout}>
-        <Button type="primary">Submit</Button>
+      <Link to='/data-tables'>  <Button type="primary">Submit</Button>
+      </Link>
       </Form.Item>
     </Form>
   );

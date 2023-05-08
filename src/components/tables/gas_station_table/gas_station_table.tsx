@@ -137,7 +137,7 @@ const GasStations: React.FC = () => {
     
 <Link to="/gasStationsForm">
 <Space wrap>
-        <Button type="primary">Add Station</Button>
+        <Button type="primary">Add Gas Station</Button>
        
       </Space>
       </Link>

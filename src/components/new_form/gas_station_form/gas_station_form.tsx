@@ -27,11 +27,11 @@ const GasStationForm: React.FC = () => {
       style={{ maxWidth: 600 }}
     >
       
-      <Form.Item label="fullname">
-        <Input placeholder="enter fullname" />
+      <Form.Item label="GasStationName">
+        <Input placeholder="enter gasStationName" />
       </Form.Item>
-      <Form.Item label="gender">
-        <Input placeholder="enter gender" />
+      <Form.Item label="GasStationCode">
+        <Input placeholder="enter GasStation code" />
       </Form.Item>
       <Form.Item label="phone">
         <Input placeholder="enter phone number" />
@@ -44,6 +44,24 @@ const GasStationForm: React.FC = () => {
       </Form.Item>
       <Form.Item label="city">
         <Input placeholder="enter city" />
+      </Form.Item>
+      <Form.Item label="Street">
+        <Input placeholder="enter street" />
+      </Form.Item>
+      <Form.Item label="longitude">
+        <Input placeholder="enter longitude" />
+      </Form.Item>
+      <Form.Item label="latitude">
+        <Input placeholder="enter latitude" />
+      </Form.Item>
+      <Form.Item label="Working Hours">
+        <Input placeholder="enter working hours" />
+      </Form.Item>
+      <Form.Item label="AccountNumber">
+        <Input placeholder="enter accountNumber" />
+      </Form.Item>
+      <Form.Item label="Status">
+        <Input placeholder="enter status" />
       </Form.Item>
       <Form.Item {...buttonItemLayout}>
         <Button type="primary">Submit</Button>

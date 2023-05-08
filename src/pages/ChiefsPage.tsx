@@ -7,7 +7,7 @@ const ChiefsPage: React.FC = () => {
   const { t } = useTranslation();
   return (
     <>
-      <PageTitle>{t('common.chiefs')}</PageTitle>
+      <PageTitle>{t('chiefs')}</PageTitle>
       <App />
     </>
   );
