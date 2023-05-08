@@ -22,9 +22,19 @@ import MedicalDashboardPage from '@app/pages/DashboardPages/MedicalDashboardPage
 
 const NewsFeedPage = React.lazy(() => import('@app/pages/NewsFeedPage'));
 const DataTablesPage = React.lazy(() => import('@app/pages/DataTablesPage'));
+const RequestPage= React.lazy(()=>import('@app/pages/RequestPage'));
+const DriversPage= React.lazy(()=>import('@app/pages/DriversPage'));
+const GasStationsPage= React.lazy(()=>import('@app/pages/GasStationsPage'));
 
-const AttendantPage = React.lazy(() => import('@app/pages/AttendantPage'));
-const Attendant =React.lazy(() => import('@app/components/attendant_form/AttendantForm'));
+const ChiefsPage= React.lazy(()=>import('@app/pages/ChiefsPage'));
+const CarsPage= React.lazy(()=>import('@app/pages/CarsPage'));
+const TransactionsPage= React.lazy(()=>import('@app/pages/TransactionsPage'));
+
+
+const AttendantsForm =React.lazy(() => import('@app/components/new_form/attendant_form/AttendantForm'));
+const GasStationsForm =React.lazy(() => import('@app/components/new_form/gas_station_form/gas_station_form'));
+
+const ChiefForm =React.lazy(() => import('@app/components/new_form/chief_form/chief_form'));
 
 const ChartsPage = React.lazy(() => import('@app/pages/ChartsPage'));
 const ServerErrorPage = React.lazy(() => import('@app/pages/ServerErrorPage'));
@@ -108,9 +118,17 @@ const Skeletons = withLoading(SkeletonsPage);
 
 const DataTables = withLoading(DataTablesPage);
 //const Attendant = withLoading(AttendantPage);
-const AttendantForm = withLoading(Attendant);
+const AttendantForm = withLoading(AttendantsForm);
+const ChiefsForm = withLoading(ChiefForm);
+const RequestTable= withLoading(RequestPage);
+const DriversTable= withLoading(DriversPage);
+const ChiefsTable= withLoading(ChiefsPage);
+const CarsTable= withLoading(CarsPage);
+const GasStationsTable= withLoading(GasStationsPage);
+const GasStationForm= withLoading(GasStationsForm);
 
 
+const TransactionsTable= withLoading(TransactionsPage);
 
 const Charts = withLoading(ChartsPage);
 
@@ -155,7 +173,17 @@ return (
           <Route path="data-tables" element={<DataTables />} />
           //<Route path="attendant-form" element={< AttendantForm/>} />
           <Route path="/attendant" element={<AttendantForm />} />
-          
+          <Route path="/gasStationsForm" element={<GasStationForm />} />
+
+          <Route path="/request" element={<RequestTable />} />
+          <Route path="/drivers" element={<DriversTable />} />
+          <Route path="/chiefs" element={<ChiefsTable />} />
+          <Route path="/cars" element={<CarsTable />} />
+          <Route path="/gasStations" element={<GasStationsTable />} />
+
+          <Route path="/transactions" element={<TransactionsTable />} />
+          <Route path="/chief_form" element={<ChiefsForm />} />
+      
           <Route path="charts" element={<Charts />} />
           <Route path="maps">
             <Route path="google-maps" element={<Google />} />

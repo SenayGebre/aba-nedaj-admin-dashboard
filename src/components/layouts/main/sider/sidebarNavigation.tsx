@@ -37,7 +37,7 @@ export const sidebarNavigation: SidebarNavigationItem[] = [
   {
     title: 'Transactions',
     key: 'transactions',
-    url: '/medical-dashboard',
+    url: '/transactions',
     icon: <TransactionOutlined />,
   },
   {
@@ -48,7 +48,7 @@ export const sidebarNavigation: SidebarNavigationItem[] = [
       {
         title: 'Gas Station',
         key: 'feed',
-        url: '/apps/feed',
+        url: '/gasStations',
       },
       {
         title: 'car',
@@ -65,12 +65,12 @@ export const sidebarNavigation: SidebarNavigationItem[] = [
       {
         title: 'Request',
         key: 'request',
-        url: '',
+        url: '/request',
       },
       {
         title: 'Car',
         key: 'car',
-        url: '',
+        url: '/cars',
       },
      
     ],
@@ -95,12 +95,12 @@ export const sidebarNavigation: SidebarNavigationItem[] = [
       {
         title: 'Drivers',
         key: 'drivers',
-        url: '',
+        url: '/drivers',
       },
       {
         title: 'Chief',
         key: 'chief',
-        url: '',
+        url: '/chiefs',
       },
 ],
   },
