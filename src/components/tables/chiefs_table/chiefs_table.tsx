@@ -6,13 +6,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { ButtonType } from 'antd/lib/button';
 //import { NavigationRoute } from 'workbox-routing';
 
-
-
-  
-
-
-
-
 interface DataType {
   key: React.Key;
   name: string;
@@ -37,7 +30,6 @@ interface ExpandedDataType {
   hashPass:string;
   defaultAccount:string;
   isNew:string;
-
 }
 
 const items = [
@@ -65,11 +57,7 @@ const App: React.FC = () => {
       { title: 'status', dataIndex: 'status', key: 'status' },
       { title: 'hashPass', dataIndex: 'hashPass', key: 'hashPass' },
       { title: 'isNew', dataIndex: 'isNew', key: 'isNew' },
-      { title: 'defaultAccount', dataIndex: 'defaultAccount', key: 'defaultAccount' },
-      
-
-      
-      
+      { title: 'defaultAccount', dataIndex: 'defaultAccount', key: 'defaultAccount' },   
       {
         title: 'Action',
         dataIndex: 'operation',
@@ -112,9 +100,6 @@ const App: React.FC = () => {
     }
     return <Table columns={columns} dataSource={data} pagination={false} />;
   };
-  
-  
-  
   const columns: TableColumnsType<DataType> = [
     { title: 'Name', dataIndex: 'name', key: 'name' },
     { title: 'Platform', dataIndex: 'platform', key: 'platform' },
@@ -139,14 +124,11 @@ const App: React.FC = () => {
   }
 
   return (
-  
-    <>
-    
-<Link to="/chief_form">
+     <>
+    <Link to="/chief_form">
 <Space wrap>
         <Button type="primary">Add Chief</Button>
-       
-      </Space>
+ </Space>
       </Link>
       <Table
        // columns={columns}

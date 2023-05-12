@@ -6,13 +6,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { ButtonType } from 'antd/lib/button';
 //import { NavigationRoute } from 'workbox-routing';
 
-
-
-  
-
-
-
-
 interface DataType {
   key: React.Key;
   name: string;

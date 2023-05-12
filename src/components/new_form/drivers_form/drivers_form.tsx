@@ -7,7 +7,23 @@ const DriverForm: React.FC = () => {
   const [form] = Form.useForm();
   const [formLayout, setFormLayout] = useState<LayoutType>('horizontal');
 
-  const onFormLayoutChange = ({ layout }: { layout: LayoutType }) => {
+  const[fullname,setFullname] = useState("");
+  const[gender,setGender] = useState("");
+  const[phone,setPhone] = useState("");
+  const[email,setEmail] = useState("")
+
+  const[list,setList] = useState([] as any);
+
+  const handleSubmit=(e:any)=>{
+    e.preventDefault();
+    const data={fullname,gender,phone,email}
+    setList((ls:any)=>[...ls,data])
+    setFullname("")
+    setPhone("")
+    setEmail("")
+
+  }
+const onFormLayoutChange = ({ layout }: { layout: LayoutType }) => {
     setFormLayout(layout);
   };
 
@@ -28,18 +44,18 @@ const DriverForm: React.FC = () => {
     >
       
       <Form.Item label="fullname">
-        <Input placeholder="enter fullname" />
+        <Input placeholder="enter fullname" value={fullname} onChange={(e)=>setFullname(e.target.value)} />
       </Form.Item>
       <Form.Item label="gender">
-        <Input placeholder="enter gender" />
+        <Input placeholder="enter gender" value={gender} onChange={(e)=>setGender(e.target.value)} />
       </Form.Item>
       <Form.Item label="phone">
-        <Input placeholder="enter phone number" />
+        <Input placeholder="enter phone" value={phone} onChange={(e)=>setPhone(e.target.value)} />
       </Form.Item>
       <Form.Item label="email">
-        <Input placeholder="enter email" />
+        <Input placeholder="enter email" value={email} onChange={(e)=>setEmail(e.target.value)} />
       </Form.Item>
-      <Form.Item label="region">
+    {/*   <Form.Item label="region">
         <Input placeholder="enter region" />
       </Form.Item>
       <Form.Item label="city">
@@ -65,9 +81,9 @@ const DriverForm: React.FC = () => {
       </Form.Item>
       <Form.Item label="Default Account">
         <Input placeholder="enter defaultAccount" />
-      </Form.Item>
+      </Form.Item> */}
       <Form.Item {...buttonItemLayout}>
-        <Button type="primary">Submit</Button>
+        <Button type="primary" onSubmit={handleSubmit}>Submit</Button>
       </Form.Item>
     </Form>
   );

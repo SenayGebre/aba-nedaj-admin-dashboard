@@ -4,14 +4,7 @@ import type { TableColumnsType } from 'antd';
 import { Badge, Dropdown, Space, Table,Button, } from 'antd';
 import { Link, useNavigate } from 'react-router-dom';
 import { ButtonType } from 'antd/lib/button';
-//import { NavigationRoute } from 'workbox-routing';
-
-
-
-  
-
-
-
+import DriverForm from '@app/components/new_form/drivers_form/drivers_form';
 
 interface DataType {
   key: React.Key;
@@ -22,33 +15,28 @@ interface DataType {
   creator: string;
   createdAt: string;
 }
-
 interface ExpandedDataType {
   id: React.Key;
   fullname: string;
   gender:string;
   email: string;
   phone: string;
-  region: string;
+  /* region: string;
   city: string;
   street:string;
   roleId:string;
   status:string;
   hashPass:string;
   defaultAccount:string;
-  isNew:string;
-
+  isNew:string; */
 }
-
 const items = [
   { key: '1', label: 'Action 1' },
   { key: '2', label: 'Action 2' },
 ];
-
 const Drivers: React.FC = () => {
   const expandedRowRender = () => {
    
-    
     const columns: TableColumnsType<ExpandedDataType> = [
       { title: 'id', dataIndex: 'id', key: 'id' },
      
@@ -57,19 +45,6 @@ const Drivers: React.FC = () => {
 
       { title: 'email', dataIndex: 'email', key: 'email' },
       { title: 'phone', dataIndex: 'phone', key: 'phone' },
-      { title: 'region', dataIndex: 'region', key: 'region' },
-      { title: 'city', dataIndex: 'city', key: 'city' },
-      { title: 'street', dataIndex: 'street', key: 'street' },
-      { title: 'roleId', dataIndex: 'roleId', key: 'roleId' },
-      { title: 'gasStationId', dataIndex: 'gasStationId', key: 'gasStationId' },
-      { title: 'status', dataIndex: 'status', key: 'status' },
-      { title: 'hashPass', dataIndex: 'hashPass', key: 'hashPass' },
-      { title: 'isNew', dataIndex: 'isNew', key: 'isNew' },
-      { title: 'defaultAccount', dataIndex: 'defaultAccount', key: 'defaultAccount' },
-      
-
-      
-      
       {
         title: 'Action',
         dataIndex: 'operation',
@@ -85,7 +60,7 @@ const Drivers: React.FC = () => {
             </Dropdown>
           </Space>
         ),
-      },
+      }, 
     ];
 
     const data = [];
@@ -93,28 +68,13 @@ const Drivers: React.FC = () => {
       data.push({
         id: i.toString(),
         fullname: 'Abebe Kebede',
-         gender:'male',
+        gender:'male',
         email: 'abebe@gmail.com',
         phone: '09090909',
-        region: 'myregion',
-        city: 'addis ababa',
-        street:'mys street',
-        roleId: 'chief',
-        gasStationId: '123',
-        hashPass:'#',
-        status: 'status',
-        isNew: 'yes',
-        defaultAccount:'12345'
-
-
-
       });
     }
     return <Table columns={columns} dataSource={data} pagination={false} />;
   };
-  
-  
-  
   const columns: TableColumnsType<DataType> = [
     { title: 'Name', dataIndex: 'name', key: 'name' },
     { title: 'Platform', dataIndex: 'platform', key: 'platform' },
@@ -124,8 +84,7 @@ const Drivers: React.FC = () => {
     { title: 'Date', dataIndex: 'createdAt', key: 'createdAt' },
     { title: 'Action', key: 'operation', render: () => <a>Publish</a> },
   ];
-
-  const data: DataType[] = [];
+ const data: DataType[] = [];
   for (let i = 0; i < 1; ++i) {
     data.push({
       key: i.toString(),
@@ -137,26 +96,18 @@ const Drivers: React.FC = () => {
       createdAt: '2014-12-24 23:12:00',
     });
   }
-
   return (
-  
-    <>
-    
-<Link to="/driver_form">
-<Space wrap>
+     <>
+    <Link to="/driver_form">
+     <Space wrap>
         <Button type="primary">Add Driver</Button>
-       
-      </Space>
-      </Link>
-      <Table
-       // columns={columns}
-       
+    </Space>
+    </Link>
+    <Table
         expandable={{ expandedRowRender, defaultExpandedRowKeys: ['0'] }}
         dataSource={data}
       />
-     
-      
-    </>
+     </>
   );
 };
 

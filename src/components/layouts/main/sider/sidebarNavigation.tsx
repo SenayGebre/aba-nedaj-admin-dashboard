@@ -37,7 +37,7 @@ export const sidebarNavigation: SidebarNavigationItem[] = [
   {
     title: 'Transactions',
     key: 'transactions',
-    url: '/transactions',
+    url: '/auth/sign-up',
     icon: <TransactionOutlined />,
   },
   {
@@ -90,7 +90,7 @@ export const sidebarNavigation: SidebarNavigationItem[] = [
       {
         title: 'Admin',
         key: 'admin',
-        url: '',
+        url: '/admin-page',
       },
       {
         title: 'Drivers',

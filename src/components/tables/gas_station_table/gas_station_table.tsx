@@ -6,13 +6,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { ButtonType } from 'antd/lib/button';
 //import { NavigationRoute } from 'workbox-routing';
 
-
-
-  
-
-
-
-
 interface DataType {
   key: React.Key;
   name: string;
@@ -25,7 +18,7 @@ interface DataType {
 
 interface ExpandedDataType {
   id: React.Key;
-  businessId: string;
+  companyName: string;
   gasStationName:string;
   gasStationCode: string;
   phone: string;
@@ -52,7 +45,7 @@ const GasStations: React.FC = () => {
     const columns: TableColumnsType<ExpandedDataType> = [
      
       { title: 'id', dataIndex: 'id', key: 'id' },
-      { title: 'businessId', dataIndex: 'businessId', key: 'businessId' },
+      { title: 'Company Name', dataIndex: 'Company Name', key: 'Company Name' },
 
       { title: 'gasStationName', dataIndex: 'gasStationName', key: 'gasStationName' },
       { title: 'gasStationCode', dataIndex: 'gasStationCode', key: 'gasStationCode' },
@@ -88,7 +81,7 @@ const GasStations: React.FC = () => {
     for (let i = 0; i < 3; ++i) {
       data.push({
         id: i.toString(),
-        businessId: 'Abebe Kebede',
+        companyName: 'Abebe Kebede',
         gasStationName: 'Abebe Kebede',
         gasStationCode: 'Abebe Kebede',
          phone:'090909',
