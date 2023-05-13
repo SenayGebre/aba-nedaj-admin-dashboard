@@ -18,7 +18,7 @@ interface DataType {
 
 interface ExpandedDataType {
   id: React.Key;
-  companyName: string;
+  businessId: string;
   gasStationName:string;
   gasStationCode: string;
   phone: string;
@@ -45,7 +45,7 @@ const GasStations: React.FC = () => {
     const columns: TableColumnsType<ExpandedDataType> = [
      
       { title: 'id', dataIndex: 'id', key: 'id' },
-      { title: 'Company Name', dataIndex: 'Company Name', key: 'Company Name' },
+      { title: 'businessId', dataIndex: 'businessId', key: 'businessId' },
 
       { title: 'gasStationName', dataIndex: 'gasStationName', key: 'gasStationName' },
       { title: 'gasStationCode', dataIndex: 'gasStationCode', key: 'gasStationCode' },
@@ -81,7 +81,7 @@ const GasStations: React.FC = () => {
     for (let i = 0; i < 3; ++i) {
       data.push({
         id: i.toString(),
-        companyName: 'Abebe Kebede',
+        businessId: 'Abebe Kebede',
         gasStationName: 'Abebe Kebede',
         gasStationCode: 'Abebe Kebede',
          phone:'090909',

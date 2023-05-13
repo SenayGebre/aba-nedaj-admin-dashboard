@@ -51,9 +51,9 @@ export const sidebarNavigation: SidebarNavigationItem[] = [
         url: '/gasStations',
       },
       {
-        title: 'car',
+        title: 'Business',
         key: 'dataTables',
-        url: '/cars',
+        url: '/business-page',
       },
     ],
   },

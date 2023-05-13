@@ -12,41 +12,39 @@ type Props = {
   list: IEmployee[];
   onDeleteClickHnd: (data: IEmployee) => void;
   onEdit: (data: IEmployee) => void;
-
 };
-const GasStations = (props: Props) => {
+const BusinessList = (props: Props) => {
 const [employeeList, setEmployeeList] = useState(
       dummyEmployeeList as IEmployee[]);
-const { list, onDeleteClickHnd, onEdit } = props;
+const { list, onDeleteClickHnd, onEdit} = props;
+
     
    interface DataType {
     key: React.Key;
-    firstName: string;
-    lastName: string;
-    email: string;
-   }
+    CompanyName: string;
+    LogoURL: string;
+ }
   const items = [
     { key: '1', label: 'Action 1' },
     { key: '2', label: 'Action 2' },
   ];
 
 const columns: TableColumnsType<IEmployee> = [
-  { title: 'id', dataIndex: 'id', key: 'id' },
-  { title: 'firstName', dataIndex: 'firstName', key: 'firstName' },
-  { title: 'lastName', dataIndex: 'lastName', key: 'lastName' },
-  { title: 'email', dataIndex: 'email', key: 'email' },
+  { title: 'Business Id', dataIndex: 'id', key: 'id' },
+  { title: 'Company Name', dataIndex: 'CompanyName', key: 'CompanyName' },
+  { title: 'Logo URL', dataIndex: 'LogoURL', key: 'LogoURL' },
   {
     title: 'Action',
     dataIndex: 'operation',
     key: 'operation',
     render: () => (
       <Space size="middle">
-        < Button type="primary">Edit</ Button >{ ' ' }
-        < Button type="primary">Delete</ Button >
-      </Space>
+        < Button type="primary"onClick={() => onEdit(list)}>Edit</ Button >{ ' ' }
+        < Button type="primary" onClick={() => onDeleteClickHnd(list)}>Delete
+        </ Button >
+        </Space>
       ),
     },]
-
 return (
     <div className="App">
       <Table columns={columns} dataSource={list} >
@@ -54,4 +52,4 @@ return (
     </div>
   )
   }
-export default GasStations;
+export default BusinessList;

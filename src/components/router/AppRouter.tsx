@@ -26,6 +26,7 @@ const RequestPage= React.lazy(()=>import('@app/pages/RequestPage'));
 const DriversPage= React.lazy(()=>import('@app/pages/DriversPage'));
 const AdminPage = React.lazy(()=>import('@app/pages/Adminpage'))
 const GasStationsPage= React.lazy(()=>import('@app/pages/GasStationsPage'));
+const BusinessPage= React.lazy(()=>import('@app/pages/BusinessPage'));
 
 const ChiefsPage= React.lazy(()=>import('@app/pages/ChiefsPage'));
 const CarsPage= React.lazy(()=>import('@app/pages/CarsPage'));
@@ -132,6 +133,7 @@ const GasStationForm= withLoading(GasStationsForm);
 const DriversForm= withLoading(DriverForm);
 const CarsForm= withLoading(CarForm);
 const Admin = withLoading(AdminPage);
+const Business = withLoading(BusinessPage);
 
 
 const TransactionsTable= withLoading(TransactionsPage);
@@ -179,6 +181,7 @@ return (
           <Route path="data-tables" element={<DataTables />} />
           <Route path="attendant-form" element={< AttendantForm/>} />
           <Route path="/admin-page" element={<Admin/>}/>
+          <Route path="/business-page" element={<Business/>}/>
           <Route path="/gasStationsForm" element={<GasStationForm />} />
           <Route path="/carForm" element={<CarsForm />} />
 
